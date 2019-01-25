@@ -2,9 +2,11 @@ from bs4 import BeautifulSoup
 import requests
 
 def search(carname, reviews):
+    results = dict()
     for k in reviews:
-        if carname in k.lower():
-            print(k, reviews[k])
+        if carname.lower() in k.lower():
+            results[k] = reviews[k]
+    return results
 
 def get_soup(link):
     r = requests.get(link)
