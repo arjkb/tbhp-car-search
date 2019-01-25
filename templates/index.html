@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <h1>Results page {{ sample_text }}</h1>
+    <ol>
+    {% for k in reviews %}
+    <!-- <li>{{ k, reviews[k] }}</li> -->
+    <li><a href="{{ reviews[k] }}">{{ k }}</a></li>
+    {% endfor %}
+    </ol>
+</body>
+</html>
