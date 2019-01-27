@@ -23,14 +23,14 @@ def get_pagination_links(soup):
             links.add(link.get('href'))
     return links
 
-def get_reviews():
-    soup = get_soup('https://www.team-bhp.com/forum/official-new-car-reviews/')
+def get_reviews(baselink):
+    soup = get_soup(baselink)
     if soup == None:
         print("Error fetching page")
         exit(0)
 
     navigation_pages = set()
-    navigation_pages.add('https://www.team-bhp.com/forum/official-new-car-reviews/')
+    navigation_pages.add(baselink)
     reviews = dict()
 
     navigation_pages.update(get_pagination_links(soup))
