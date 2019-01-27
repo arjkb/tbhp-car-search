@@ -14,6 +14,15 @@ def get_soup(link):
         return None
     return BeautifulSoup(r.text, 'html.parser')
 
+def get_pagination_links(soup):
+    # get list of all links to be navigated to
+    links = set()
+    for link in soup.find_all('a'):
+        link_title = link.get('title')
+        if(str(link_title).startswith("Show results")):
+            links.add(link.get('href'))
+    return links
+
 def get_reviews():
     soup = get_soup('https://www.team-bhp.com/forum/official-new-car-reviews/')
     if soup == None:
@@ -24,12 +33,7 @@ def get_reviews():
     navigation_pages.add('https://www.team-bhp.com/forum/official-new-car-reviews/')
     reviews = dict()
 
-    # get list of all links to be navigated to
-    # go to each of those links, and get links to vehicle reviews
-    for link in soup.find_all('a'):
-        link_title = link.get('title')
-        if(str(link_title).startswith("Show results")):
-            navigation_pages.add(link.get('href'))
+    navigation_pages.update(get_pagination_links(soup))
 
     # now go to each page, and get the vehicle review list
     for page in navigation_pages:
