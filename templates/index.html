@@ -3,11 +3,17 @@
 <head></head>
 <body>
     <h1>Results page {{ sample_text }}</h1>
-    <ol>
-    {% for k in reviews %}
-    <!-- <li>{{ k, reviews[k] }}</li> -->
-    <li><a href="{{ reviews[k] }}" target="_blank">{{ k }}</a></li>
-    {% endfor %}
-    </ol>
+    <h2>Official New Car Reviews</h2>
+        <ol>
+        {% for k in oncr %}
+        <li><a href="{{ oncr[k] }}" target="_blank">{{ k }}</a></li>
+        {% endfor %}
+        </ol>
+    <h2>Test Drives & Initial Ownership Reviews</h2>
+        <ol>
+        {% for k in tdio %}
+        <li><a href="{{ tdio[k] }}" target="_blank">{{ k }}</a></li>
+        {% endfor %}
+        </ol>
 </body>
 </html>
