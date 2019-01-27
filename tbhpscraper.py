@@ -38,7 +38,7 @@ def get_reviews():
             for link in soup.find_all('a'):
                 link_id = link.get('id')
                 if str(link_id).startswith('thread'):
-                    print(link.text, link.get('href'))
+                    # print(link.text, link.get('href'))
                     reviews[link.text] = link.get('href')
 
     # print(review)
