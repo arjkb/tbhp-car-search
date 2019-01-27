@@ -5,9 +5,11 @@ app = Flask(__name__, static_url_path='')
 
 baselink_oncr = 'https://www.team-bhp.com/forum/official-new-car-reviews/'
 baselink_tdio = 'https://www.team-bhp.com/forum/test-drives-initial-ownership-reports/'
+baselink_ltr = 'https://www.team-bhp.com/forum/long-term-ownership-reviews/'
 
 reviews_oncr = tbhpscraper.get_reviews(baselink_oncr)
 reviews_tdio = tbhpscraper.get_reviews(baselink_tdio)
+reviews_ltr = tbhpscraper.get_reviews(baselink_ltr)
 
 @app.route('/')
 def root():
@@ -20,11 +22,13 @@ def results():
     # r = tbhpscraper.get_reviews()
     return render_template('index.html', sample_text="Foo", 
                                     oncr=reviews_oncr,
-                                    tdio=reviews_tdio)
+                                    tdio=reviews_tdio,
+                                    ltr=reviews_ltr)
 
 @app.route('/search/<word>')
 def search(word):
     r_searched_oncr = tbhpscraper.search(word, reviews_oncr)
     r_searched_tdio = tbhpscraper.search(word, reviews_tdio)
+    r_searched_ltr = tbhpscraper.search(word, reviews_ltr)
 
-    return render_template('index.html', sample_text="Search", oncr=r_searched_oncr, tdio=r_searched_tdio)
+    return render_template('index.html', sample_text="Search", oncr=r_searched_oncr, tdio=r_searched_tdio, ltr=r_searched_ltr)
