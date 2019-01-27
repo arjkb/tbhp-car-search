@@ -2,7 +2,9 @@ from flask import Flask, render_template
 import tbhpscraper
 
 app = Flask(__name__, static_url_path='')
-r = tbhpscraper.get_reviews()
+
+baselink_oncr = 'https://www.team-bhp.com/forum/official-new-car-reviews/'
+r = tbhpscraper.get_reviews(baselink_oncr)
 
 @app.route('/')
 def root():
