@@ -1,0 +1,8 @@
+{% macro showreviews(title, reviews) %}
+<h2>{{ title }}</h2>
+<ol>
+    {% for k in reviews %}
+    <li><a href="{{ reviews[k] }}" target="_blank">{{ k }}</a></li>
+    {% endfor %}
+</ol>
+{% endmacro %}

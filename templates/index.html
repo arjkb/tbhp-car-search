@@ -1,27 +1,11 @@
+{% import "reviewlist.html" as reviewlist %}
 <!DOCTYPE html>
 <html>
 <head></head>
 <body>
     <h1>Results page {{ sample_text }}</h1>
-    <h2>Official New Car Reviews</h2>
-        <ol>
-        {% for k in oncr %}
-        <li><a href="{{ oncr[k] }}" target="_blank">{{ k }}</a></li>
-        {% endfor %}
-        </ol>
-        
-    <h2>Test Drives & Initial Ownership Reviews</h2>
-        <ol>
-        {% for k in tdio %}
-        <li><a href="{{ tdio[k] }}" target="_blank">{{ k }}</a></li>
-        {% endfor %}
-        </ol>
-
-    <h2>Long Term Reviews</h2>
-        <ol>
-        {% for k in ltr %}
-        <li><a href="{{ ltr[k] }}" target="_blank">{{ k }}</a></li>
-        {% endfor %}
-        </ol>
+    {{ reviewlist.showreviews('Official New Car Reviews', oncr) }}
+    {{ reviewlist.showreviews('Test Drives & Initial Ownership Reviews', tdio) }}
+    {{ reviewlist.showreviews('Long Term Reviews', ltr) }}
 </body>
 </html>
