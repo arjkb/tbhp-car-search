@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% block reviews %}
+    {% for review_category in reviews %}
+    <h3>{{ review_category.title }}</h3>
+    <ol>
+        {% for review in review_category.data %}
+            <li>
+                <a href="{{ review_category.data[review] }}" target="_blank">{{ review }}</a>
+            </li>
+        {% endfor %}        
+    </ol>
+    {% endfor %}
+{% endblock %}

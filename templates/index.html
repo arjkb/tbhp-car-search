@@ -31,9 +31,7 @@
         </div>
         <hr>
 
-    {{ reviewlist.showreviews('Official New Car Reviews', oncr) }}
-    {{ reviewlist.showreviews('Test Drives & Initial Ownership Reviews', tdio) }}
-    {{ reviewlist.showreviews('Long Term Reviews', ltr) }}
+    {% block reviews %}{% endblock %}
     </div>
     
     <!-- Optional JavaScript -->
