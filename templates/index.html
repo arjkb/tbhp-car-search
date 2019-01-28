@@ -11,10 +11,30 @@
     
 </head>
 <body>
-    <h1>Results page {{ sample_text }}</h1>
+    <div class="container">
+        <h1>Results page {{ sample_text }}</h1>
+
+        <div class="container">
+        <form action="" method="get">
+            <div class="form-group">
+                <label for="searchterminput">Enter car to search</label>
+                <div class="row">
+                    <div class="col-9">
+                        <input type="text" class="form-control" placeholder='Example: "mercedes", "innova", "honda city"' id="searchterminput">
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary" value="Search">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+        <hr>
+
     {{ reviewlist.showreviews('Official New Car Reviews', oncr) }}
     {{ reviewlist.showreviews('Test Drives & Initial Ownership Reviews', tdio) }}
     {{ reviewlist.showreviews('Long Term Reviews', ltr) }}
+    </div>
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
