@@ -25,7 +25,7 @@ def results():
         { 'title': 'Test Drives & Initial Ownership Reports', 'data': reviews_tdio},
         { 'title': 'Long Term Reviews', 'data': reviews_ltr}
     ]
-    return render_template('reviews.html', sample_text="Foo", reviews=reviews)
+    return render_template('reviews.html', sample_text="All Car List", reviews=reviews)
 
 @app.route('/search', methods=["GET"])
 def search():
@@ -39,4 +39,4 @@ def search():
         { 'title': 'Test Drives & Initial Ownership Reports', 'data': r_searched_tdio},
         { 'title': 'Long Term Reviews', 'data': r_searched_ltr}
     ]
-    return render_template('reviews.html', sample_text="Search", reviews=reviews)
+    return render_template('reviews.html', sample_text='Search results: "{}"'.format(word), reviews=reviews)
