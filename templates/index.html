@@ -15,12 +15,12 @@
         <h1>Results page {{ sample_text }}</h1>
 
         <div class="container">
-        <form action="" method="get">
+        <form action="{{ url_for('search') }}" method="GET">
             <div class="form-group">
                 <label for="searchterminput">Enter car to search</label>
                 <div class="row">
                     <div class="col-9">
-                        <input type="text" class="form-control" placeholder='Example: "mercedes", "innova", "honda city"' id="searchterminput">
+                        <input type="text" name="car" class="form-control" placeholder='Example: "mercedes", "innova", "honda city"' id="searchterminput">
                     </div>
                     <div class="col">
                         <button type="submit" class="btn btn-primary" value="Search">Submit</button>

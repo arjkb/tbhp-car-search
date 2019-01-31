@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import tbhpscraper
 
 app = Flask(__name__, static_url_path='')
@@ -27,8 +27,9 @@ def results():
     ]
     return render_template('reviews.html', sample_text="Foo", reviews=reviews)
 
-@app.route('/search/<word>')
-def search(word):
+@app.route('/search', methods=["GET"])
+def search():
+    word = str(request.args.get("car"))
     r_searched_oncr = tbhpscraper.search(word, reviews_oncr)
     r_searched_tdio = tbhpscraper.search(word, reviews_tdio)
     r_searched_ltr = tbhpscraper.search(word, reviews_ltr)
