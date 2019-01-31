@@ -19,7 +19,6 @@ reviews_oncr = {
     'Maruti WagonR : Test Drive & Review': 'https://www.team-bhp.com/forum/official-new-car-reviews/80144-maruti-wagonr-test-drive-review.html',
     'Ford EcoSport S (1.0L EcoBoost) : Official Review': 'https://www.team-bhp.com/forum/official-new-car-reviews/201440-ford-ecosport-s-1-0l-ecoboost-official-review.html',
     'Fiat Linea T-Jet : Test Drive & Review': 'https://www.team-bhp.com/forum/official-new-car-reviews/90735-fiat-linea-t-jet-test-drive-review.html',
-    'Volkswagen Polo 1.2L GT TSI : Official Review': 'https://www.team-bhp.com/forum/official-new-car-reviews/135550-volkswagen-polo-1-2l-gt-tsi-official-review.html',
     'Tata Hexa : Official Review': 'https://www.team-bhp.com/forum/official-new-car-reviews/181903-tata-hexa-official-review.html',
 }
 
