@@ -45,6 +45,6 @@ def get_reviews(baselink):
                     # print(link.text, link.get('href'))
                     reviews[link.text] = link.get('href')
 
-    # print(review)
+    print(reviews)
     # search("mercedes", review)
     return reviews
