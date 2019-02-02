@@ -68,3 +68,7 @@ def search():
         { 'title': 'Long Term Reviews', 'data': r_searched_ltr}
     ]
     return render_template('reviews.html', sample_text='Search results: "{}"'.format(word), reviews=reviews)
+
+
+if __name__ == "__main__":
+    app.run()
