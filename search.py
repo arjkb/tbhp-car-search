@@ -19,7 +19,6 @@ reviews_oncr = {
     'Maruti WagonR : Test Drive & Review': 'https://www.team-bhp.com/forum/official-new-car-reviews/80144-maruti-wagonr-test-drive-review.html',
     'Ford EcoSport S (1.0L EcoBoost) : Official Review': 'https://www.team-bhp.com/forum/official-new-car-reviews/201440-ford-ecosport-s-1-0l-ecoboost-official-review.html',
     'Fiat Linea T-Jet : Test Drive & Review': 'https://www.team-bhp.com/forum/official-new-car-reviews/90735-fiat-linea-t-jet-test-drive-review.html',
-    'Volkswagen Polo 1.2L GT TSI : Official Review': 'https://www.team-bhp.com/forum/official-new-car-reviews/135550-volkswagen-polo-1-2l-gt-tsi-official-review.html',
     'Tata Hexa : Official Review': 'https://www.team-bhp.com/forum/official-new-car-reviews/181903-tata-hexa-official-review.html',
 }
 
@@ -46,11 +45,6 @@ reviews_ltr = {
 }
 
 @app.route('/')
-def root():
-    # return 'at root'
-    return render_template('index.html', sample_text="")
-
-@app.route('/reviews/')
 def reviews():
     # r = {'Ford Fiesta (Automatic) : Test Drive & Review': 'https://www.team-bhp.com/forum/official-new-car-reviews/111055-ford-fiesta-automatic-test-drive-review.html', 'Fiat Avventura : Test Drive & Review': 'https://www.team-bhp.com/forum/test-drives-initial-ownership-reports/156762-fiat-avventura-test-drive-review.html', '2014 Skoda Yeti Facelift : A Close Look': 'https://www.team-bhp.com/forum/indian-car-scene/155485-2014-skoda-yeti-facelift-close-look.html', 'Mitsubishi Lancer EVO X : Test Drive & Review': 'https://www.team-bhp.com/forum/official-new-car-reviews/95116-mitsubishi-lancer-evo-x-test-drive-review.html'}
     # r = tbhpscraper.get_reviews()
