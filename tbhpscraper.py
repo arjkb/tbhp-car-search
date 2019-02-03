@@ -54,7 +54,7 @@ def get_reviews(baselink):
     navigation_pages.extend(get_pagination_links(soup))
 
     # now go to each page, and get the vehicle review list
-    pool = ThreadPool(16)
+    pool = ThreadPool(4)
     results = pool.map(get_vehicle_review_from_page, navigation_pages)
     pool.close()
     pool.join()
