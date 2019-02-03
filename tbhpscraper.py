@@ -16,11 +16,11 @@ def get_soup(link):
 
 def get_pagination_links(soup):
     # get list of all links to be navigated to
-    links = set()
+    links = list()
     for link in soup.find_all('a'):
         link_title = link.get('title')
         if(str(link_title).startswith("Show results")):
-            links.add(link.get('href'))
+            links.append(link.get('href'))
     return links
 
 def get_reviews(baselink):
@@ -29,11 +29,11 @@ def get_reviews(baselink):
         print("Error fetching page")
         exit(0)
 
-    navigation_pages = set()
-    navigation_pages.add(baselink)
+    navigation_pages = list()
+    navigation_pages.append(baselink)
     reviews = dict()
 
-    navigation_pages.update(get_pagination_links(soup))
+    navigation_pages.extend(get_pagination_links(soup))
 
     # now go to each page, and get the vehicle review list
     for page in navigation_pages:
